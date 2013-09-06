@@ -1,0 +1,28 @@
+%h2 Dettagli causa #{@causa.codice_causa}
+
+%ul#dettagli
+  %li
+    Luogo:
+    = @causa.luogo
+  %li
+    Data:
+    = @causa.data
+  %li
+    Chiamante:
+    = @causa.chiamante
+  %li
+    Chiamato:
+    = @causa.chiamato
+  %li
+    Avvocato Chiamante:
+    = @causa.avvocato_chiamante
+  %li
+    Avvocato Chiamato:
+    = @causa.avvocato_chiamato
+  %li
+    Giudice:
+    = @causa.giudice
+
+= button_to 'Edit', edit_causa_path(@causa)
+= button_to 'Delete', causa_path(@causa), :method => :delete, :confirm => "Confermi?"
+= link_to "Torna all'elenco delle cause", causas_path

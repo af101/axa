@@ -1,0 +1,36 @@
+%h1 Modifica Causa Esistente
+
+= form_tag causa_path(@causa), :method => :put do
+
+  = label      :causa, :luogo, "Luogo"
+  = text_field :causa, 'luogo'
+  %br
+
+  = label      :causa, :data, "Data"
+  = datetime_select :causa, :data
+  %br
+
+  = label      :causa, :chiamante, "Chiamante"
+  = text_field :causa, 'chiamante'
+  %br
+
+  = label      :causa, :chiamato, "Chiamato"
+  = text_field :causa, 'chiamato'
+  %br
+
+  = label      :causa, :avvocato_chiamante, "Avvocato Chiamante"
+  = text_field :causa, 'avvocato_chiamante'
+  %br
+
+  = label      :causa, :avvocato_chiamato, "Avvocato Chiamato"
+  = text_field :causa, 'avvocato_chiamato'
+  %br
+
+  = label      :causa, :giudice, "Giudice"
+  = text_field :causa, 'giudice'
+
+  = label      :causa, :codice_causa, "Codice causa"
+  = text_field :causa, 'codice_causa'
+  %br
+
+  = submit_tag "Salva"

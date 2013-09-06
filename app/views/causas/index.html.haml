@@ -1,0 +1,34 @@
+%h1 Tutte le cause
+
+%table#causas
+  %thead
+    %tr
+      %th{:class=>@hilite["luogo"]}
+        %a{:id=>"luogo",:href=>causas_path({:sort_by=>"luogo"})} Luogo
+      %th{:class=>@hilite["data"]}
+        %a{:id=>"data",:href=>causas_path({:sort_by=>"data"})} Data
+      %th{:class=>@hilite["giudice"]}
+        %a{:id=>"giudice",:href=>causas_path({:sort_by=>"giudice"})} Giudice
+      %th{:class=>@hilite["chiamante"]}
+        %a{:id=>"chiamante",:href=>causas_path({:sort_by=>"chiamante"})} Chiamante
+      %th{:class=>@hilite["chiamato"]}
+        %a{:id=>"chiamato",:href=>causas_path({:sort_by=>"chiamato"})} Chiamato
+      %th{:class=>@hilite["avvocato_chiamante"]}
+        %a{:id=>"avvocato_chiamante",:href=>causas_path({:sort_by=>"avvocato_chiamante"})} Avvocato Chiamante
+      %th{:class=>@hilite["avvocato_chiamato"]}
+        %a{:id=>"avvocato_chiamato",:href=>causas_path({:sort_by=>"avvocato_chiamato"})} Avvocato Chiamato
+      %th{:class=>@hilite["codice_causa"]}
+        %a{:id=>"codice_causa",:href=>causas_path({:sort_by=>"codice_causa"})} Codice Causa
+  %tbody
+    - @causas.each do |causa|
+      %tr
+        %td= causa.luogo
+        %td= causa.data
+        %td= causa.giudice
+        %td= causa.chiamante
+        %td= causa.chiamato
+        %td= causa.avvocato_chiamante
+        %td= causa.avvocato_chiamato
+        %td= link_to "#{causa.codice_causa}", causa_path(causa.id)
+
+= link_to 'Aggiungi causa', new_causa_path
