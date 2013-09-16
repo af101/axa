@@ -6,8 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 initial_causes = [
-                  {:luogo               => "Milano Aula 1",
-                   :data                => "2013-09-25 08:00",
+                  {:name                => "A001",
+                   :luogo               => "Milano Aula 1",
+                   :start_at            => "2013-09-25 08:00",
+                   :end_at              => "2013-09-26 08:00",
                    :chiamante           => "Arturo Toscanini",
                    :chiamato            => "Gustavo Floberto",
                    :avvocato_chiamante  => "Azzecca Garbugli",
@@ -15,8 +17,10 @@ initial_causes = [
                    :giudice             => "Larren Little",
                    :codice_causa        => "A001"},
 
-                  {:luogo               => "Milano Aula 1",
-                   :data                => "2013-09-25 09:00",
+                  {:name                => "A002",
+                   :luogo               => "Milano Aula 1",
+                   :start_at            => "2013-09-24 09:00",
+                   :end_at              => "2013-09-29 09:00",
                    :chiamante           => "Arturo Garpenio",
                    :chiamato            => "Gustavo Lapinta",
                    :avvocato_chiamante  => "Kevin Lomax",
@@ -24,8 +28,10 @@ initial_causes = [
                    :giudice             => "Chamberlain Harrel",
                    :codice_causa        => "A002"},
 
-                  {:luogo               => "Milano Aula 2",
-                   :data                => "2013-09-25 09:00",
+                  {:name                => "A003",
+                   :luogo               => "Milano Aula 2",
+                   :start_at            => "2013-09-27 09:00",
+                   :end_at              => "2013-09-27 09:00",
                    :chiamante           => "Eufrasio Garpenio",
                    :chiamato            => "Affranto Soprano",
                    :avvocato_chiamante  => "Tom Logan",
@@ -34,6 +40,8 @@ initial_causes = [
                    :codice_causa        => "A003"}
                  ]
 
+#initial_causes.each do |causa|
+#  Causa.create!(causa)
 initial_causes.each do |causa|
-  Causa.create!(causa)
+  Event.create!(causa)
 end

@@ -11,17 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130901193614) do
+ActiveRecord::Schema.define(version: 20130906055658) do
 
-  create_table "causas", force: true do |t|
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.datetime "start_at"
+    t.datetime "end_at"
     t.string   "luogo"
-    t.datetime "data"
     t.string   "chiamante"
     t.string   "chiamato"
     t.string   "avvocato_chiamante"
     t.string   "avvocato_chiamato"
     t.string   "giudice"
     t.string   "codice_causa"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
